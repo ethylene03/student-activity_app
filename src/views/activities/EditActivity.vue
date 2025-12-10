@@ -7,7 +7,7 @@ import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 onMounted(() => {
-  document.title = 'Edit Activity - Student Activity App'
+  document.title = 'Edit Activity - Student Activity Tracker'
 })
 
 const isLoading = ref<boolean>(false)

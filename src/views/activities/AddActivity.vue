@@ -3,8 +3,12 @@ import { createActivity } from '@/api/activities'
 import ActivityForm from '@/components/ActivityForm.vue'
 import { isError } from '@/helpers/utils'
 import type { Activity } from '@/models/activities'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+
+onMounted(() => {
+  document.title = 'Add Activity - Student Activity Tracker'
+})
 
 const isLoading = ref<boolean>(false)
 const error = ref<string>('')

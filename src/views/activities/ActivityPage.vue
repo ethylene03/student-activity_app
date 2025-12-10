@@ -9,7 +9,7 @@ import { Modal } from 'bootstrap'
 import { onMounted, ref, watch } from 'vue'
 
 onMounted(() => {
-  document.title = 'Activities - Student Activity App'
+  document.title = 'Activities - Student Activity Tracker'
   fetchActivities()
   debouncedFetch.value = debounce(() => fetchActivities(), 500)
 })
