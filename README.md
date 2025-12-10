@@ -29,7 +29,7 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 
 Ensure that the directory contains `.env` file. Create one if none, and add:
 
-```sh
+```
 VITE_API_URL=path/to/your/backend/api
 ```
 
@@ -56,3 +56,17 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Project Snippets
+
+### Dashboard
+
+![Dashboard Snippet](./dashboard-snippet.png)
+
+## Activities Board
+
+![Activity Board Snippet](./activities-snippet.png)
+
+## Add/Edit Activity
+
+![Add/Edit Activity](./activity-add-snippet.png)
