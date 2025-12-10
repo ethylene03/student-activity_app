@@ -25,7 +25,7 @@ function renderChart() {
   option.value = {
     tooltip: {
       trigger: 'item',
-      formatter: '{a} : {c} counts',
+      formatter: '{b} : {c} activities',
     },
     xAxis: {
       type: 'category',
@@ -57,10 +57,7 @@ watch(
 </script>
 
 <template>
-  <figure
-    class="figure card shadow-sm p-3"
-    style="min-height: 400px"
-  >
+  <figure class="figure card shadow-sm p-3" style="min-height: 400px">
     <v-chart :option="option" style="min-height: 300px" autoresize />
     <figcaption class="figure-caption mt-5 text-center">Daily Activities Overview</figcaption>
   </figure>
