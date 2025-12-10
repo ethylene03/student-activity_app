@@ -32,6 +32,7 @@ async function fetchActivities(page: number = 0) {
     {
       page: Math.max(0, page - 1).toString(),
       sort: `${sortWith.value},${sortAscending.value ? 'asc' : 'desc'}`,
+      ...(filterDate.value ? { date: filterDate.value } : {}),
       ...(search.value ? { query: search.value } : {}),
     },
     controller.value?.signal,
@@ -97,6 +98,12 @@ async function handleDeleteActivity() {
   toDeleteId.value = ''
   fetchActivities()
 }
+
+const filterDate = ref('')
+watch(
+  () => filterDate.value,
+  () => fetchActivities(),
+)
 </script>
 
 <template>
@@ -107,6 +114,7 @@ async function handleDeleteActivity() {
       @on-change-sort-with="sortWith = $event"
       @on-search-text="search = $event"
       @on-click-sort-by="sortAscending = !sortAscending"
+      @on-filter-by-date="filterDate = $event"
     />
 
     <DataTable
