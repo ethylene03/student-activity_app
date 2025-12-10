@@ -36,7 +36,9 @@ watch(
 <template>
   <nav class="navbar navbar-expand-lg bg-white shadow-sm position-sticky top-0 z-3">
     <div class="container-fluid py-3 px-5">
-      <h1 class="navbar-brand mb-0">Project Name</h1>
+      <h1 class="navbar-brand mb-0 cursor-pointer" @click="$router.push({ name: 'Home' })">
+        Project Name
+      </h1>
       <button
         class="navbar-toggler"
         type="button"
