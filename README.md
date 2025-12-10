@@ -1,6 +1,6 @@
 # student-activity-app
 
-This template should help get you started developing with Vue 3 in Vite.
+This is the frontend repository for the student activity tracker project.
 
 ## Recommended IDE Setup
 
@@ -9,7 +9,7 @@ This template should help get you started developing with Vue 3 in Vite.
 ## Recommended Browser Setup
 
 - Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
+  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
   - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
 - Firefox:
   - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
@@ -24,6 +24,16 @@ TypeScript cannot handle type information for `.vue` imports by default, so we r
 See [Vite Configuration Reference](https://vite.dev/config/).
 
 ## Project Setup
+
+### Environment Variables
+
+Ensure that the directory contains `.env` file. Create one if none, and add:
+
+```sh
+VITE_API_URL=path/to/your/backend/api
+```
+
+### Install Dependencies
 
 ```sh
 npm install
