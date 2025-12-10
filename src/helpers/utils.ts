@@ -33,4 +33,11 @@ function camelToTitle(str: string): string {
     .join(' ')
 }
 
-export { debounce, isError, camelToTitle, formatDate }
+function colorGenerator() {
+  const hue = Math.floor(Math.random() * 40) + 200
+  const saturation = Math.floor(Math.random() * 30) + 60
+  const lightness = Math.floor(Math.random() * 30) + 50
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`
+}
+
+export { debounce, isError, camelToTitle, formatDate, colorGenerator }

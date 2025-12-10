@@ -1,6 +1,7 @@
 import type { ApiError, Page } from '@/models/global'
 import type { Student } from '@/models/students'
 import { DELETE, fetchApi, GET, POST, PUT } from './base'
+import type { DashboardStats } from '@/models/activities'
 
 async function createStudent(student: Student): Promise<Student | ApiError> {
   try {
@@ -75,4 +76,19 @@ async function deleteStudent(id: string): Promise<void | ApiError> {
   }
 }
 
-export { createStudent, deleteStudent, getStudent, getStudents, updateStudent }
+async function getDashboardStats(): Promise<DashboardStats | ApiError> {
+  try {
+    const response = await fetchApi(GET('/students/summary'))
+    const data = await response.json()
+
+    if (!response.ok) return { error: data.error } as ApiError
+
+    return data as DashboardStats
+  } catch (error) {
+    if (error instanceof TypeError) return { error: ['Network/Fetch error'] } as ApiError
+
+    return { error: ['Unknown error'] } as ApiError
+  }
+}
+
+export { createStudent, deleteStudent, getStudent, getStudents, updateStudent, getDashboardStats }
